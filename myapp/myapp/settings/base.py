@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # https://docs.wagtail.org/en/stable/reference/contrib/simple_translation.html
     "wagtail.contrib.simple_translation",
+    "sendEmail",
 ]
 
 MIDDLEWARE = [
@@ -174,3 +175,12 @@ WAGTAILSEARCH_BACKENDS = {
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 WAGTAILADMIN_BASE_URL = "https://sakura-eng.net"
+
+# mail from "https://dev.to/abderrahmanemustapha/how-to-send-email-with-django-and-gmail-in-production-the-right-way-24ab"
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sakura.eng.info@gmail.com'
+EMAIL_HOST_PASSWORD = 'oiqeyeosoheqbtqm'
+DEFAULT_FROM_EMAIL = 'default from email'
